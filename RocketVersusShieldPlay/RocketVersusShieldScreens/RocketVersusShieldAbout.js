@@ -34,20 +34,18 @@ const RocketVersusShieldAbout = () => {
           style={styles.rocketBgBlur}
         >
           <Image
-            source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldHomeLogo.png')}
-            style={{
-              borderRadius: 15,
-            }}
+            source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+            style={{ width: 220, height: 220, borderRadius: 20 }}
           />
         </ImageBackground>
 
         <View style={styles.rocketAboutContainer}>
           <Text style={styles.rocketAboutText}>
-            Rocket Versus Shield Play is a competitive space arcade game where
-            players take control of a rocket or a defensive shield in fast
-            reflex-based matches. Play solo against AI or challenge friends in
-            party mode, earn stars in every game, unlock visual skins, and climb
-            the global leaderboard.
+            RocketPaly Versus is a competitive space arcade game where players
+            take control of a rocket or a defensive shield in fast reflex-based
+            matches. Play solo against AI or challenge friends in party mode,
+            earn stars in every game, unlock visual skins, and climb the global
+            leaderboard.
           </Text>
         </View>
 

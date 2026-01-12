@@ -1,5 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Share,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import RocketVersusShieldHeader from '../RocketVersusShieldComponents/RocketVersusShieldHeader';
 import RocketVersusShieldBackground from '../RocketVersusShieldComponents/RocketVersusShieldBackground';
@@ -52,6 +59,18 @@ const RocketVersusShieldStatistics = ({ navigation }) => {
             shieldStatsRocketVersusShield.players,
           ),
         };
+
+  const handleShare = () => {
+    Share.share({
+      message: `Rocket vs Shield - ${tabRocketVersusShield} Statistics\n\nTotal rounds won: ${
+        dataRocketVersusShield.total
+      }\n\nTop Players:\n${dataRocketVersusShield.players
+        .map(
+          (player, index) => `${index + 1}. ${player.name} - ${player.score}`,
+        )
+        .join('\n')}`,
+    });
+  };
 
   return (
     <RocketVersusShieldBackground>
@@ -154,7 +173,12 @@ const RocketVersusShieldStatistics = ({ navigation }) => {
           ))}
         </View>
 
-        <TouchableOpacity activeOpacity={0.7}>
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => {
+            handleShare();
+          }}
+        >
           <LinearGradient
             colors={['#FAA506', '#F6FA7E']}
             style={styles.shareBtnRocketVersusShield}
@@ -190,12 +214,15 @@ const styles = StyleSheet.create({
   tabInactiveRocketVersusShield: {
     borderWidth: 1,
     borderColor: '#795100',
+    borderRadius: 20,
   },
   tabTextRocketVersusShield: {
     fontSize: 19,
     fontFamily: 'Ubuntu-Medium',
     color: '#795100',
+    borderRadius: 20,
   },
+
   tabTextActiveRocketVersusShield: {
     color: '#000',
   },

@@ -22,10 +22,8 @@ const RocketVersusShieldHome = () => {
           style={styles.rocketBgBlur}
         >
           <Image
-            source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldHomeLogo.png')}
-            style={{
-              borderRadius: 15,
-            }}
+            source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+            style={{ width: 220, height: 220, borderRadius: 20 }}
           />
         </ImageBackground>
 

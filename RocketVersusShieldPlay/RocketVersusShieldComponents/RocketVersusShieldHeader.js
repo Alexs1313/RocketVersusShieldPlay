@@ -62,7 +62,14 @@ const RocketVersusShieldHeader = ({ onPress, headTitle }) => {
       </TouchableOpacity>
 
       <Image
-        source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldLogoHead.png')}
+        source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+        style={{
+          width: 53.75,
+          height: 53.75,
+          borderRadius: 25,
+          borderWidth: 1,
+          borderColor: '#d0c00eff',
+        }}
       />
     </View>
   );

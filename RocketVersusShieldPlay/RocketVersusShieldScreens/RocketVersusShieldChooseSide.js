@@ -176,8 +176,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu-Medium',
   },
   rocketBgBlurRocketVersusShield: {
-    width: 300,
-    height: 300,
+    width: 230,
+    height: 250,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
@@ -205,8 +205,8 @@ const styles = StyleSheet.create({
     right: -1,
   },
   imageRocketVersusShield: {
-    width: 220,
-    height: 220,
+    width: 190,
+    height: 190,
     resizeMode: 'contain',
     marginHorizontal: 20,
   },

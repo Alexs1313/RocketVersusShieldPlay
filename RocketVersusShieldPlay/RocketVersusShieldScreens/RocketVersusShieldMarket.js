@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import RocketVersusShieldHeader from '../RocketVersusShieldComponents/RocketVersusShieldHeader';
@@ -188,6 +189,8 @@ const RocketVersusShieldMarket = ({ navigation }) => {
                 tabRocketVersusShield !== 'ROCKET' && {
                   borderWidth: 1,
                   borderColor: '#795100',
+                  borderRadius: 20,
+                  overflow: 'hidden',
                 },
               ]}
               colors={
@@ -226,6 +229,8 @@ const RocketVersusShieldMarket = ({ navigation }) => {
                 tabRocketVersusShield !== 'SHIELD' && {
                   borderWidth: 1,
                   borderColor: '#795100',
+                  borderRadius: 20,
+                  overflow: 'hidden',
                 },
               ]}
               colors={
@@ -401,8 +406,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   rocketBgBlurRocketVersusShield: {
-    width: 300,
-    height: 300,
+    width: 220,
+    height: 240,
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
@@ -421,7 +426,7 @@ const styles = StyleSheet.create({
   },
   rocketGradientBtnRocketVersusShield: {
     borderRadius: 18,
-    width: 179,
+    width: 205,
     height: 58,
     justifyContent: 'center',
     alignItems: 'center',
@@ -430,7 +435,7 @@ const styles = StyleSheet.create({
   },
   rocketBtnTextRocketVersusShield: {
     color: '#000000',
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Ubuntu-Medium',
   },
   actionPriceTextRocketVersusShield: {
@@ -456,6 +461,8 @@ const styles = StyleSheet.create({
     color: '#795100',
     fontSize: 19,
     fontFamily: 'Ubuntu-Medium',
+    borderRadius: 20,
+    overflow: 'hidden',
   },
   tabTextActiveRocketVersusShield: {
     color: '#000',
@@ -472,8 +479,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageRocketVersusShield: {
-    width: 220,
-    height: 220,
+    width: 180,
+    height: 180,
     resizeMode: 'contain',
   },
   arrowBtnRocketVersusShield: {
@@ -487,7 +494,7 @@ const styles = StyleSheet.create({
   arrowTextRocketVersusShield: {
     color: '#fff',
     fontSize: 28,
-    top: -1,
+    top: Platform.OS === 'ios' ? -1 : -5,
     right: -1,
   },
   starRowRocketVersusShield: {
