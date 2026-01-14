@@ -1,6 +1,6 @@
 workflows:
   ios-workflow:
-    name: 'RocketPaly: Versus Shield'
+    name: 'RockatP|au: Versus Shield'
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
@@ -44,4 +44,4 @@ workflows:
       app_store_connect:
         auth: integration
         submit_to_app_store: true
-        copyright: 'RocketPaly: Versus Shield 2025'
+        copyright: 'RockatP|au: Versus Shield 2025'
