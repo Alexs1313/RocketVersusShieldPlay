@@ -23,7 +23,7 @@ const RocketVersusShieldHome = () => {
         >
           <Image
             source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
-            style={{ width: 220, height: 220, borderRadius: 20 }}
+            style={{ width: 220, height: 215, borderRadius: 19 }}
           />
         </ImageBackground>
 
