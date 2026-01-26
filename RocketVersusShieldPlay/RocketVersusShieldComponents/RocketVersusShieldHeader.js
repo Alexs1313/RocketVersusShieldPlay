@@ -1,4 +1,11 @@
-import { Image, Platform, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const RocketVersusShieldHeader = ({ onPress, headTitle }) => {
@@ -61,18 +68,29 @@ const RocketVersusShieldHeader = ({ onPress, headTitle }) => {
         </LinearGradient>
       </TouchableOpacity>
 
-      <Image
-        source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
-        style={{
-          width: 53.75,
-          height: 53.75,
-          borderRadius: 25,
-          borderWidth: 1,
-          borderColor: '#d0c00eff',
-        }}
-      />
+      {Platform.OS === 'ios' ? (
+        <Image
+          source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+          style={styles.image}
+        />
+      ) : (
+        <Image
+          source={require('../../assets/RocketVersusShieldImages/andrLogo.png')}
+          style={styles.image}
+        />
+      )}
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    width: 53.75,
+    height: 53.75,
+    borderRadius: 25,
+    borderWidth: 1,
+    borderColor: '#d0c00eff',
+  },
+});
 
 export default RocketVersusShieldHeader;

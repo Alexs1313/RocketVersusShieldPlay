@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import { WebView } from 'react-native-webview';
-import { View, Image, StyleSheet, ImageBackground } from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  ImageBackground,
+  Platform,
+} from 'react-native';
 import { rocketHtmlLoader } from '../RocketVersusShieldConsts/rocketHtmlLoader';
 import RocketVersusShieldBackground from './RocketVersusShieldBackground';
 import { useNavigation } from '@react-navigation/native';
@@ -23,10 +29,17 @@ const RocketVersusShieldLoader = () => {
           source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldHomeLogoBg.png')}
           style={styles.rocketBgBlur}
         >
-          <Image
-            source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
-            style={{ width: 300, height: 290, borderRadius: 20 }}
-          />
+          {Platform.OS === 'ios' ? (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+              style={{ width: 300, height: 290, borderRadius: 20 }}
+            />
+          ) : (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/andrLogo.png')}
+              style={{ width: 300, height: 290, borderRadius: 20 }}
+            />
+          )}
         </ImageBackground>
       </View>
 

@@ -1,4 +1,12 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import RocketVersusShieldBackground from '../RocketVersusShieldComponents/RocketVersusShieldBackground';
 import LinearGradient from 'react-native-linear-gradient';
 import { useState } from 'react';
@@ -7,26 +15,31 @@ import { useNavigation } from '@react-navigation/native';
 const RocketVersusShieldOnboard = () => {
   const [currentOnboardIndex, setCurrentOnboardIndex] = useState(0);
   const navigation = useNavigation();
+  const { height } = useWindowDimensions();
 
   return (
     <RocketVersusShieldBackground>
       <View style={styles.welcRocketContainer}>
         {currentOnboardIndex === 0 && (
           <Image
-            source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldOnboard1.png')}
-            style={{ width: '100%' }}
+            source={
+              Platform.OS === 'ios'
+                ? require('../../assets/RocketVersusShieldImages/RocketVersusShieldOnboard1.png')
+                : require('../../assets/RocketVersusShieldImages/andrOn.png')
+            }
+            style={{ width: '100%', height: height * 0.6 }}
           />
         )}
         {currentOnboardIndex === 1 && (
           <Image
             source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldOnboard2.png')}
-            style={{ width: '100%' }}
+            style={{ width: '100%', height: height * 0.6 }}
           />
         )}
         {currentOnboardIndex === 2 && (
           <Image
             source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldOnboard3.png')}
-            style={{ width: '100%' }}
+            style={{ width: '100%', height: height * 0.6 }}
           />
         )}
         <LinearGradient

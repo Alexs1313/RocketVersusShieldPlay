@@ -261,7 +261,7 @@ const RocketVersusShieldGame = () => {
           <View style={{ position: 'relative' }}>
             <Image
               source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldOnboard1.png')}
-              style={{ width: '100%' }}
+              style={{ width: '100%', height: height * 0.6 }}
             />
             <View
               style={{

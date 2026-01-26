@@ -1,6 +1,7 @@
 import {
   Image,
   ImageBackground,
+  Platform,
   Share,
   StyleSheet,
   Text,
@@ -17,7 +18,11 @@ const RocketVersusShieldAbout = () => {
 
   const handleRocketVersusShieldShare = () => {
     Share.share({
-      message: `RockatP|alu Versus is a competitive space arcade game where players take control of a rocket or a defensive shield in fast reflex-based matches. Play solo against AI or challenge friends in party mode, earn stars in every game, unlock visual skins, and climb the global leaderboard.`,
+      message: `${
+        Platform.OS === 'ios'
+          ? 'RocketP|alu Versus'
+          : 'Rocket Versus Shield Play'
+      } is a competitive space arcade game where players take control of a rocket or a defensive shield in fast reflex-based matches. Play solo against AI or challenge friends in party mode, earn stars in every game, unlock visual skins, and climb the global leaderboard.`,
     });
   };
 
@@ -33,19 +38,28 @@ const RocketVersusShieldAbout = () => {
           source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldHomeLogoBg.png')}
           style={styles.rocketBgBlur}
         >
-          <Image
-            source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
-            style={{ width: 220, height: 210, borderRadius: 20 }}
-          />
+          {Platform.OS === 'ios' ? (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+              style={{ width: 220, height: 210, borderRadius: 20 }}
+            />
+          ) : (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/andrLogo.png')}
+              style={{ width: 220, height: 210, borderRadius: 20 }}
+            />
+          )}
         </ImageBackground>
 
         <View style={styles.rocketAboutContainer}>
           <Text style={styles.rocketAboutText}>
-            RockatP|alu Versus is a competitive space arcade game where players
-            take control of a rocket or a defensive shield in fast reflex-based
-            matches. Play solo against AI or challenge friends in party mode,
-            earn stars in every game, unlock visual skins, and climb the global
-            leaderboard.
+            {Platform.OS === 'ios'
+              ? 'RocketP|alu Versus'
+              : 'Rocket Versus Shield Play'}{' '}
+            is a competitive space arcade game where players take control of a
+            rocket or a defensive shield in fast reflex-based matches. Play solo
+            against AI or challenge friends in party mode, earn stars in every
+            game, unlock visual skins, and climb the global leaderboard.
           </Text>
         </View>
 

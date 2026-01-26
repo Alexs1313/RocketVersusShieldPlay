@@ -1,6 +1,7 @@
 import {
   Image,
   ImageBackground,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -21,10 +22,17 @@ const RocketVersusShieldHome = () => {
           source={require('../../assets/RocketVersusShieldImages/RocketVersusShieldHomeLogoBg.png')}
           style={styles.rocketBgBlur}
         >
-          <Image
-            source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
-            style={{ width: 220, height: 215, borderRadius: 19 }}
-          />
+          {Platform.OS === 'ios' ? (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/iconnew.png')}
+              style={{ width: 220, height: 215, borderRadius: 19 }}
+            />
+          ) : (
+            <Image
+              source={require('../../assets/RocketVersusShieldImages/andrLogo.png')}
+              style={{ width: 220, height: 215, borderRadius: 19 }}
+            />
+          )}
         </ImageBackground>
 
         <View
